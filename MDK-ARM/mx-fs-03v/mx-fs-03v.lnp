@@ -1,0 +1,28 @@
+--cpu Cortex-M0+
+"mx-fs-03v\startup_stm32g030xx.o"
+"mx-fs-03v\main.o"
+"mx-fs-03v\stm32g0xx_it.o"
+"mx-fs-03v\stm32g0xx_hal_msp.o"
+"mx-fs-03v\stm32g0xx_hal_tim.o"
+"mx-fs-03v\stm32g0xx_hal_tim_ex.o"
+"mx-fs-03v\stm32g0xx_hal_rcc.o"
+"mx-fs-03v\stm32g0xx_hal_rcc_ex.o"
+"mx-fs-03v\stm32g0xx_ll_rcc.o"
+"mx-fs-03v\stm32g0xx_hal_flash.o"
+"mx-fs-03v\stm32g0xx_hal_flash_ex.o"
+"mx-fs-03v\stm32g0xx_hal_gpio.o"
+"mx-fs-03v\stm32g0xx_hal_dma.o"
+"mx-fs-03v\stm32g0xx_hal_dma_ex.o"
+"mx-fs-03v\stm32g0xx_ll_dma.o"
+"mx-fs-03v\stm32g0xx_hal_pwr.o"
+"mx-fs-03v\stm32g0xx_hal_pwr_ex.o"
+"mx-fs-03v\stm32g0xx_hal_cortex.o"
+"mx-fs-03v\stm32g0xx_hal.o"
+"mx-fs-03v\stm32g0xx_hal_exti.o"
+"mx-fs-03v\stm32g0xx_hal_uart.o"
+"mx-fs-03v\stm32g0xx_hal_uart_ex.o"
+"mx-fs-03v\system_stm32g0xx.o"
+--strict --scatter "mx-fs-03v\mx-fs-03v.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "mx-fs-03v.map" -o mx-fs-03v\mx-fs-03v.axf
