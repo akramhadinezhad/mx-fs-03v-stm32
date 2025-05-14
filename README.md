@@ -1,0 +1,1 @@
+The antenna is critical for both the MX-FS-03V  and MX-05V modules. Without an antenna—or with a poorly designed one—the range and reliability drop dramatically so I vertically mount a 17.3 cm straight wire.
