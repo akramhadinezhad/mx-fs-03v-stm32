@@ -41,7 +41,7 @@
 /* Private variables ---------------------------------------------------------*/
  TIM_HandleTypeDef htim1;
 
-UART_HandleTypeDef huart1;
+ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 
@@ -53,7 +53,6 @@ static void MX_GPIO_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-
 void send_command(uint8_t command);
 /* USER CODE END PFP */
 
@@ -93,13 +92,11 @@ int main(void)
   MX_TIM1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-//	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
 	HAL_UART_Init(&huart1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-//	duty=60;
   while (1)
   {
     /* USER CODE END WHILE */
@@ -108,18 +105,14 @@ int main(void)
 		if(HAL_GPIO_ReadPin(GPIOD,high_Pin)==0){
 				send_command(0x01);
 				HAL_Delay(50);
-
-
 		}
 		if(HAL_GPIO_ReadPin(GPIOD,low_Pin)==0){
 				send_command(0x02);
 				HAL_Delay(50);
-
 		}
 		if(HAL_GPIO_ReadPin(GPIOD,onoff_Pin)==0){
 				send_command(0x03);
 				HAL_Delay(50);
-
 		}
   }
   /* USER CODE END 3 */
@@ -288,9 +281,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-//void set_pwm_duty_cycle(uint8_t duty){
-//	__HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,(htim1.Init.Period+1)*duty/100);
-//}
 void send_command(uint8_t command){
 	uint8_t frame[6]={0xAA,0xAA,0xAA,0x55,command,0xFF};
 	HAL_UART_Transmit(&huart1,frame,sizeof(frame),HAL_MAX_DELAY);
